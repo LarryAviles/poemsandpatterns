@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import heroImage from "@/assets/hero-fashion.jpg";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -64,11 +65,11 @@ const HeroSection = () => {
               Explorar Cursos
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
-            <a href="/moldes">
+            <Link to="/moldes">
               <Button variant="hero-outline" size="lg">
                 Ver Moldes
               </Button>
-            </a>
+            </Link>
           </motion.div>
         </div>
       </div>
