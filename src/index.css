@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Editorial Fashion Palette - Inspired by reference */
+    --background: 20 33% 98%;
+    --foreground: 345 43% 15%;
+
+    --card: 20 25% 97%;
+    --card-foreground: 345 43% 15%;
+
+    --popover: 20 33% 98%;
+    --popover-foreground: 345 43% 15%;
+
+    /* Burgundy/Wine Primary */
+    --primary: 345 63% 30%;
+    --primary-foreground: 20 33% 98%;
+
+    /* Soft Blush Pink Secondary */
+    --secondary: 10 45% 92%;
+    --secondary-foreground: 345 43% 20%;
+
+    /* Muted - Cream tones */
+    --muted: 20 20% 94%;
+    --muted-foreground: 345 15% 45%;
+
+    /* Accent - Dusty Rose */
+    --accent: 350 35% 85%;
+    --accent-foreground: 345 43% 20%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 20 20% 88%;
+    --input: 20 20% 90%;
+    --ring: 345 63% 30%;
+
+    --radius: 0.375rem;
+
+    /* Custom tokens */
+    --wine: 345 63% 30%;
+    --wine-light: 345 50% 45%;
+    --blush: 10 45% 92%;
+    --blush-dark: 10 35% 85%;
+    --cream: 30 40% 96%;
+    --cream-dark: 30 25% 92%;
+    --lavender: 280 30% 90%;
+    --lavender-dark: 280 25% 80%;
+    
+    /* Gradients */
+    --gradient-editorial: linear-gradient(135deg, hsl(var(--blush)) 0%, hsl(var(--lavender)) 50%, hsl(var(--cream)) 100%);
+    --gradient-wine: linear-gradient(135deg, hsl(var(--wine)) 0%, hsl(var(--wine-light)) 100%);
+    --gradient-soft: linear-gradient(180deg, hsl(var(--cream)) 0%, hsl(var(--blush)) 100%);
+    
+    /* Typography */
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Montserrat', system-ui, sans-serif;
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(var(--wine) / 0.08);
+    --shadow-elegant: 0 8px 40px -8px hsl(var(--wine) / 0.12);
+    --shadow-card: 0 2px 12px -2px hsl(var(--wine) / 0.06);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 345 30% 8%;
+    --foreground: 20 25% 95%;
+
+    --card: 345 25% 12%;
+    --card-foreground: 20 25% 95%;
+
+    --popover: 345 30% 8%;
+    --popover-foreground: 20 25% 95%;
+
+    --primary: 350 45% 70%;
+    --primary-foreground: 345 30% 8%;
+
+    --secondary: 345 20% 18%;
+    --secondary-foreground: 20 25% 90%;
+
+    --muted: 345 20% 15%;
+    --muted-foreground: 20 15% 60%;
+
+    --accent: 350 25% 25%;
+    --accent-foreground: 20 25% 90%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 345 20% 18%;
+    --input: 345 20% 18%;
+    --ring: 350 45% 70%;
+
+    --wine: 350 45% 70%;
+    --wine-light: 350 40% 60%;
+    --blush: 345 20% 18%;
+    --blush-dark: 345 25% 25%;
+    --cream: 345 15% 12%;
+    --cream-dark: 345 20% 18%;
+    --lavender: 280 15% 20%;
+    --lavender-dark: 280 20% 25%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    @apply font-medium tracking-tight;
+  }
+}
+
+@layer components {
+  .editorial-heading {
+    font-family: var(--font-serif);
+    @apply text-4xl md:text-6xl lg:text-7xl font-light tracking-tight leading-none;
+  }
+
+  .editorial-subheading {
+    font-family: var(--font-serif);
+    @apply text-2xl md:text-3xl font-light italic;
+  }
+
+  .gradient-editorial {
+    background: var(--gradient-editorial);
+  }
+
+  .gradient-wine {
+    background: var(--gradient-wine);
+  }
+
+  .gradient-soft {
+    background: var(--gradient-soft);
+  }
+
+  .text-gradient {
+    background: var(--gradient-wine);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .card-editorial {
+    @apply bg-card rounded-sm overflow-hidden transition-all duration-500;
+    box-shadow: var(--shadow-card);
+  }
+
+  .card-editorial:hover {
+    box-shadow: var(--shadow-elegant);
+    @apply -translate-y-1;
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+}
